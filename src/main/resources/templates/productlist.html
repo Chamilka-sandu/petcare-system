@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inventory HOMEPAGE</title>
+<link rel= "stylesheet" type ="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div align="center">
+    <h1>product List</h1>
+    <a href="new">Create New Product</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+               
+                <th>Name</th>
+                    <th>price</th>
+                      <th>category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="product : ${listProducts}">
+     
+     <tr>
+        <!--<td> [[${product.id}]]</td>-->
+        <td> [[${product.name}]]</td>
+        <td> [[${product.price}]]</td>
+        <td> [[${product.category.name}]]</td>
+       
+     </tr>
+ 
+  </th:block>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>
